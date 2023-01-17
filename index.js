@@ -2,7 +2,7 @@ let data = {}
 const p = document.getElementById('display-grade');
 
 
-Papa.parse("./ALG-grades-F22-under.csv", {
+Papa.parse("./ALG-grades-F22-int.csv", {
 	download: true,
     encoding: "utf-8",
     complete: function(results) {
@@ -32,11 +32,10 @@ function display() {
     H1: ${data[id].H1}
     H2: ${data[id].H2}
     H3: ${data[id].H3}
-    H4: ${data[id].H4}
     Mid: ${data[id].Mid}
     Fin: ${data[id].Fin}
     Sem: ${data[id].Sem}
-    The grade is determined by the following rule: (H1+H2+H3+H4)/4*0.4+SQRT(Mid+20)*10*0.25+SQRT(FIN+20)*10*0.35.
+    The grade is determined by the following rule: (H1+H2+H3)/3*0.4+SQRT(Mid+20)*10*0.25+SQRT(FIN+20)*10*0.35.
     Note that the highest grade of this course is 99. If your final grade is large than 99, then you will get 99 at most.
     `;
     p.innerText = display;
